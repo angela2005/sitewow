@@ -1,0 +1,252 @@
+* {
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+    background-image: url('https://image.freepik.com/vetores-gratis/teste-padrao-abstrato-da-caixa-de-neon-da-web-do-fundo-telas-a-tecnologia-da-projecao_115579-886.jpg');
+    background-size:auto 140vh;
+    font-family: Arial;
+    height:100vh;
+    font-size: 14px;
+    align-items: center;
+  }
+  
+  
+@media(min-width:400px){
+    body{
+      font-size: 15px;
+    }
+   
+   }
+ 
+   @media(min-width:600px){
+    body{
+      font-size: 20px;
+    }
+   
+   }
+   
+header{
+ height: 122%;
+ display:flex;
+ justify-content: center;
+ align-items: center;
+}
+
+
+  .menu{
+    background-color:white; 
+    position: fixed;
+    width: 100vw;
+    top: 0;
+  }
+  
+  a{
+    text-decoration:none;
+  }
+  
+  a:hover{ 
+    text-decoration:underline;
+  }
+  .menu ul{
+    display:flex;
+    justify-content:space-around;
+  }
+  
+  .menu li{
+    list-style:none;
+    
+  }
+  .menu a{
+    display: block;
+    padding: 10px 20px;
+  }
+  .titulo {
+    transform: scale(0.2) translateY(50vh);
+    opacity: 0;
+    animation: 1s ease 500ms animacaoTitulo forwards;
+  }
+  
+  @keyframes animacaoTitulo {
+    from {
+      transform: scale(0.2) translateY(50vh);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .sub-title,
+  .title{
+    color:white;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    line-height: 1.3em;
+
+  }
+  .sobre,
+  .contato,
+  .portifólio{
+    padding: 2em;
+    margin-bottom: 1.5em;
+    font-size: 3em;
+    min-height: 100vh;
+  }
+  .sobre h2,
+  .contato h3{
+    color: whitesmoke;
+    font-family: 'Press Start 2P', cursive;
+    margin-bottom: 1.5em;
+    font-size: 30px;
+    background-color: whitesmoke;
+  }
+  .portifólio h2{
+    color: whitesmoke;
+    font-family: 'Press Start 2P', cursive;
+    margin-bottom: 1.5em;
+    font-size: 30px;
+    border:whitesmoke;
+    border-style: dotted;
+    border-width:medium;
+    margin-left: 5px;
+    margin-right: 1px;
+
+  }
+  .sobre p {
+    color: white;
+    text-indent: 1.4em;
+    margin-bottom: 1.4em;
+    text-align: justify;
+  }
+  
+  .sobre a {
+    color: white;
+    text-decoration: underline;
+  }
+  
+  .sobre a:hover {
+    background-color: cyan;
+    text-decoration: none;
+    color: magenta;
+  }
+  
+  .sobre .avatar {
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    margin-left: 2em;
+  }
+  
+  @media (min-width: 600px) {
+    .sobre .avatar {
+      clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+      float: right;
+    }
+  }
+  
+  .portifólio .grid{
+   display: grid;
+   gap: 1em;
+    grid-template-columns:240px 240px ;
+  }
+
+  @media(min-width:560px){
+    .portifólio .grid{
+      
+       grid-template-columns:240px 240px ;
+     }
+  }
+  @media(min-width:880px){
+    .portifólio .grid{
+      
+       grid-template-columns:repeat(3,240px) ;
+       align-content: center;
+       justify-content: center;
+       height: calc(100vh-48px-8em);
+     }
+  }
+
+  .portifólio figure{
+     text-align: center;
+  }
+
+  .imglogo{
+    height:100px ;
+    width: 150px;
+  }
+  
+  .imgportifolio{
+    height:180px ;
+    width: 240px;
+    object-fit: cover;
+    object-position: left bottom;
+    border-radius: 30px;
+  }
+  .flip-card {
+    height: 180px;
+    perspective: 1000px;
+  }
+  
+  .flip-card:hover .card {
+    transform: rotateY(180deg);
+  }
+  
+  .card {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 3s;
+  }
+  
+  .card-front, 
+  .card-back {
+    backface-visibility: hidden;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+  
+  .card-back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, .7);
+    height: 180px;
+    width: 100%;
+    transform: rotateY(180deg);
+  }
+  
+  .portfolio figure {
+    text-align: center;
+  }
+  
+  .img-portfolio {
+    height: 180px;
+    width: 100%;
+    object-fit: cover;
+    object-position: left bottom;
+    transition: transform 500ms;
+  }
+  
+  /* .img-portfolio:hover {
+    transform: scale(1.2) rotate(-2deg);
+  } */
+  
+  .contato .icons {
+    text-align: center;
+  }
+  
+  .contato a {
+    color: whitesmoke;
+    font-size: 4em;
+    transition: text-shadow 1s;
+  }
+  
+  .contato a:active,
+  .contato a:hover  {
+    text-decoration: none;
+    text-shadow: 0px 0px 10px rgba(255,255,255,.5);
+  }
+ 
